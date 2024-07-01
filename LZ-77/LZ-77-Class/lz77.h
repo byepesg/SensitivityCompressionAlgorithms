@@ -1,25 +1,22 @@
-#ifndef EXAMPLECLASS_H
-#define EXAMPLECLASS_H
+#ifndef LZ77_H
+#define LZ77_H
 
 #include <string>
+#include <vector>
 
-class ExampleClass {
-private:
-    std::string name;
-    int value;
-
+class LZ77 {
 public:
-    // Constructor
-    ExampleClass(std::string initName, int initValue);
+    struct Match {
+        int offset;
+        int length;
+        char nextChar;
+    };
 
-    // Function to set the name
-    void setName(std::string newName);
+    std::vector<Match> compress(const std::string& input, int searchBufferSize, int lookAheadBufferSize);
+    std::string decompress(const std::vector<Match>& matches);
 
-    // Function to get the name
-    std::string getName() const;
-
-    // Function to display the current state of the object
-    void display() const;
+private:
+    Match findLongestMatch(const std::string& input, int currentIndex, int searchBufferSize, int lookAheadBufferSize);
 };
 
-#endif // EXAMPLECLASS_H
+#endif // LZ77_H

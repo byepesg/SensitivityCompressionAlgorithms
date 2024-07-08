@@ -14,8 +14,8 @@ int main() {
     inputFile.close();
 
     LZ77 lz77;
-    int searchBufferSize = 100;
-    int lookAheadBufferSize = 100;
+    int searchBufferSize = 5;
+    int lookAheadBufferSize = 5;
 
     std::vector<LZ77::Match> compressed = lz77.compress(input, searchBufferSize, lookAheadBufferSize);
     

@@ -17,9 +17,10 @@ EXECUTABLE="main"
 # Define source files
 MAIN_SOURCE="main.cpp"
 LZ77_SOURCE="LZ-77-Class/LZ77.cpp"
+PADDING_SOURCE="Padding/padding.cpp"
 
 # Compile the C++ code using C++11 standard
-g++ -std=c++11 -o $EXECUTABLE $MAIN_SOURCE $LZ77_SOURCE
+g++ -std=c++11 -o $EXECUTABLE $MAIN_SOURCE $LZ77_SOURCE $PADDING_SOURCE
 
 # Check if the compilation was successful
 if [ $? -eq 0 ]; then

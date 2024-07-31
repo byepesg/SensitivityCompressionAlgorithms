@@ -8,19 +8,7 @@ std::string Pad(const std::string &input, int block_size, int padding_type)
 
     if (padding_type == 0)
     {
-        // return ZeroPad(input, block_size);
 
-        // size_t input_length = input.size();
-        // size_t padding_needed = block_size - (input_length % block_size);
-        // if (padding_needed == block_size)
-        // {
-        //     padding_needed = 0; // No padding needed if already a multiple of block_size
-        // }
-
-        // std::string padding(padding_needed - 1, '\0');      // All padding bytes are zero except the last one
-        // char last_char = static_cast<char>(padding_needed); // Last padding byte indicates the number of padding bytes
-
-        // return input + padding + last_char;
         return "";
     }
     else if (padding_type == 1)
@@ -57,17 +45,7 @@ std::string Unpad(const std::string &padded, int padding_type)
 {
     if (padding_type == 0)
     {
-        // // return ZeroUnpad(padded);
-        // if (padded.empty())
-        //     return padded;
 
-        // size_t last_byte = static_cast<unsigned char>(padded.back()); // Get the value of the last byte
-        // if (last_byte > padded.size())
-        // {
-        //     std::cerr << "Padding is corrupt" << std::endl;
-        //     return "";
-        // }
-        // return padded.substr(0, padded.size() - last_byte);
         return "";
     }
     else if (padding_type == 1)
